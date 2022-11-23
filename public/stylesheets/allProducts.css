@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,200&display=swap");
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#main {
+  background-color: rgb(233, 233, 233);
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#left {
+  width: 20vw;
+  height: 100%;
+  background-color: palegreen;
+}
+#right {
+  width: 80%;
+  height: 100%;
+  background-color: teal;
+  display: flex;
+  position: relative;
+}
+
+.features {
+  width: 20vw;
+  background-color: yellow;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vmax;
+  padding: 2vw 0;
+}
+.opt {
+  width: 100%;
+  height: 4vw;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.all_products {
+  padding: 7vmax 3vmax;
+  width: 80vw;
+  min-height: 55vmax;
+  background-color: rgb(73, 71, 71);
+  display: flex;
+  gap: 1vmax;
+}
+.item {
+  width: 15vmax;
+  height: 19vmax;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.item > h4 {
+  margin-top: 10px;
+}
+.fImg > img {
+  width: 14vw;
+}
+
+#edit {
+  position: absolute;
+  right: 2%;
+  top: 1.5%;
+  width: 6vw;
+  height: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-color: yellow;
+  padding: 1.5vw;
+}
+.deleteProduct{
+  display: none;
+}
+#deleteBtn{
+  width: 5vw;
+  height: 2.5vw;
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  margin-top: 0.5vw;
+}
+
+#edit_icon {
+  font-size: 1.5vw;
+}
+
+
+/* updateProductForm */
+#updateProductForm{
+  position: absolute;
+}
+
+#foodImage{
+  width: 10vw;
+  background-color: green;
+  margin-top: 4vw;
+}
+
+/* css for drag and drop */
+.drop-zone {
+  max-width: 200px;
+  height: 200px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  color: #cccccc;
+  border: 4px dashed #009578;
+  border-radius: 10px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  position: relative;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}

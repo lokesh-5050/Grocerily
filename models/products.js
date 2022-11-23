@@ -16,7 +16,6 @@ const productSchema = mongoose.Schema({
     required: [true, "Please enter product quantity"],
   },
   productImage: { type: String, required: [true] },
-  category: [],
 });
 
 module.exports = mongoose.model("product", productSchema);

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/addProduct.css" />
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="left">
+        <div
+          class="logo"
+          style="
+            display: flex;
+            justify-content: center;
+            width: 20vw;
+            height: 5vw;
+            background-color: red;
+          "
+        >
+          <img style="width: 18%" src="../images/apple-touch-icon.png" alt="" />
+        </div>
+        <div class="features">
+          <a href="/allOrders"><div class="opt">All Orders</div></a>
+          <a href="/addProductPage"><div class="opt">Add Products</div></a>
+          <a href="/allProducts"><div class="opt">All Products</div></a>
+          <a href="/advertiseOffer"><div class="opt">Advertise New Offer</div></a>
+          <a href="/allUsers"><div class="opt">All Users</div></a>
+          <a href="/totalRevenue"><div class="opt">Total Revenue</div></a>
+        </div>
+      </div>
+      <div id="right">
+
+        <div class="add_product_form">
+          <label for="">Add product</label>
+          <form id="product_form" action="/addProduct" method="post" enctype="multipart/form-data">
+            <input type="text" placeholder="Product name" name="productname" />
+            <input type="number" placeholder="Product price" name="productprice" />
+            <input type="number" placeholder="Product quantity" name="productquantity" />
+            <div class="drop-zone">
+              <span class="drop-zone__prompt">Drop file here or click to upload</span>
+              <input type="file" name="myFile" class="drop-zone__input" />
+            </div>
+            <input type="submit" />
+          </form>
+        </div>
+
+
+        
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+        const dropZoneElement = inputElement.closest(".drop-zone");
+
+        dropZoneElement.addEventListener("click", (e) => {
+          inputElement.click();
+        });
+
+        inputElement.addEventListener("change", (e) => {
+          if (inputElement.files.length) {
+            updateThumbnail(dropZoneElement, inputElement.files[0]);
+          }
+        });
+
+        dropZoneElement.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          dropZoneElement.classList.add("drop-zone--over");
+        });
+
+        ["dragleave", "dragend"].forEach((type) => {
+          dropZoneElement.addEventListener(type, (e) => {
+            dropZoneElement.classList.remove("drop-zone--over");
+          });
+        });
+
+        dropZoneElement.addEventListener("drop", (e) => {
+          e.preventDefault();
+
+          if (e.dataTransfer.files.length) {
+            inputElement.files = e.dataTransfer.files;
+            updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+          }
+
+          dropZoneElement.classList.remove("drop-zone--over");
+        });
+      });
+
+      /**
+       * Updates the thumbnail on a drop zone element.
+       *
+       * @param {HTMLElement} dropZoneElement
+       * @param {File} file
+       */
+      function updateThumbnail(dropZoneElement, file) {
+        let thumbnailElement =
+          dropZoneElement.querySelector(".drop-zone__thumb");
+
+        // First time - remove the prompt
+        if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+          dropZoneElement.querySelector(".drop-zone__prompt").remove();
+        }
+
+        // First time - there is no thumbnail element, so lets create it
+        if (!thumbnailElement) {
+          thumbnailElement = document.createElement("div");
+          thumbnailElement.classList.add("drop-zone__thumb");
+          dropZoneElement.appendChild(thumbnailElement);
+        }
+
+        thumbnailElement.dataset.label = file.name;
+
+        // Show thumbnail for image files
+        if (file.type.startsWith("image/")) {
+          const reader = new FileReader();
+
+          reader.readAsDataURL(file);
+          reader.onload = () => {
+            thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+          };
+        } else {
+          thumbnailElement.style.backgroundImage = null;
+        }
+      }
+    </script>
+  </body>
+</html>

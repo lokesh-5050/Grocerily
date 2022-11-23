@@ -56,14 +56,20 @@ body {
 
 /* right section */
 .add_product_form{
-    width: 30vw;
-    height: 20vw;
+    width: 40vw;
+    height: 29vw;
     background-color: palevioletred;
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+    border-radius: 20px;
+    padding: 1vw 1vw;
 }
 #product_form{
     width: 25vw;
     display: flex;
     flex-direction: column;
+    gap: 1vmax;
 }
 
 
@@ -117,8 +123,3 @@ body {
   }
 
   
-  .welcome_user{
-    width: 30vw;
-    height: 10vw;
-    background-color: skyblue;
-  }

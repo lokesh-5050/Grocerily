@@ -3,15 +3,16 @@ const productModel = require('../models/products')
 
 exports.homePage = (req, res, next) => {
   const user = req.user;
-  res.render("homepage", {});
+  res.render("homepage",);
 };
 
 exports.adminPage = async (req, res, next) => {
-  const allProducts = await productModel.find();
-  res.render("adminPage", { products: allProducts });
+  
+  res.render("adminPage");
 };
 
 exports.addProducts = async (req, res, next) => {
+      console.log(req.file);
   //file is image's name with cloudinary so //req.file.path
   const { productname, productprice, productquantity } = req.body;
   try {
@@ -23,9 +24,28 @@ exports.addProducts = async (req, res, next) => {
     });
     console.log("here");
 
-    res.status(200).json({message:"done"})
-    // res.redirect(req.headers.referer);
+    // res.status(200).json({message:"done"})
+    res.redirect(req.headers.referer);
   } catch (error) {
-    res.status(403).json(error);
+    res.status(400).json({"error":error});
   }
 };
+
+exports.addProductPage = async(req,res,next) =>{
+  res.render("addProduct")
+}
+exports.allProducts = async(req,res,next) =>{
+  const allProducts = await productModel.find();
+  res.render("allProducts" , {products:allProducts})
+}
+exports.deleteProduct = async(req,res,next) =>{
+  const thisProduct = await productModel.deleteOne({id:req.params.id})
+  res.redirect("back")
+}
+exports.updateProduct = async(req,res,next) =>{
+  const updateThisProduct = await productModel.findByIdAndUpdate({id:req.params.id} , {})
+  res.redirect("back")
+}
+
+
+

@@ -7,6 +7,7 @@ const {
   addProducts,
   addProductPage,
   allProducts,
+  allUsers,
   deleteProduct,
   updateProduct
 } = require("../controllers/indexControllers");
@@ -57,6 +58,9 @@ router.get("/addProductPage" ,addProductPage )
 
 //Api for /allProducts
 router.get("/allProducts" , allProducts )
+
+//Api for /allUsers
+router.get("/allUsers" , allUsers )
 
 //Api for //deleteProduct
 router.get("/deleteProduct/:id" , deleteProduct )

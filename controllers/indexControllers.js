@@ -37,6 +37,10 @@ exports.allProducts = async (req, res, next) => {
   const allProducts = await productModel.find();
   res.render("allProducts", { products: allProducts });
 };
+exports.allUsers = async(req,res,next) =>{
+  let allUsers = await userModel.find();
+  res.render("allUsers" , {users:allUsers})
+}
 exports.deleteProduct = async (req, res, next) => {
   const thisProduct = await productModel.deleteOne({ id: req.params.id });
   res.redirect("back");

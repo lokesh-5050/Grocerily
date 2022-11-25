@@ -62,7 +62,7 @@ router.get("/allProducts" , allProducts )
 router.get("/deleteProduct/:id" , deleteProduct )
 
 //Api for //updateProduct
-router.get("/updateProduct/:id" , updateProduct )
+router.post("/updateProduct/:id" , upload.single("myFile"),  updateProduct )
 
 // //Api for userLogin
 // router.post("/userLogin", authenticateLogin  ,login)

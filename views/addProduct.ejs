@@ -79,7 +79,7 @@
 
         dropZoneElement.addEventListener("drop", (e) => {
           e.preventDefault();
-
+          console.log(e);
           if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
             updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
@@ -111,7 +111,7 @@
           dropZoneElement.appendChild(thumbnailElement);
         }
 
-        thumbnailElement.dataset.label = file.name;
+        thumbnailElement.dataset.label = file.name; 
 
         // Show thumbnail for image files
         if (file.type.startsWith("image/")) {

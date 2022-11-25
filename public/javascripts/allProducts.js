@@ -86,7 +86,7 @@ function formAndDeleteBtnOn() {
         console.log(btnDel);
         btnDel.forEach(e =>{
           e.classList.add("showDeleteBtn")
-          e.classList.remove("deleteProduct")
+          // e.classList.remove("deleteProduct")
         })
         
 
@@ -95,7 +95,7 @@ function formAndDeleteBtnOn() {
         console.log(form)
         form.forEach(e=>{
           e.classList.add("showUpdateForm")
-          e.classList.remove("updateProductForm")
+          // e.classList.remove("updateProductForm")
         })
 
       }
@@ -121,7 +121,7 @@ function formAndDeleteBtnOff() {
         console.log(btnDel);
         btnDel.forEach(e =>{
           e.classList.remove("showDeleteBtn")
-          e.classList.add("deleteProduct")
+          // e.classList.add("deleteProduct")
         })
         
 
@@ -130,7 +130,7 @@ function formAndDeleteBtnOff() {
         console.log(form)
         form.forEach(e=>{
           e.classList.remove("showUpdateForm")
-          e.classList.add("updateProductForm")
+          // e.classList.add("updateProductForm")
         })
 
       }

@@ -1,17 +1,17 @@
 const handleDelete = (e) => {
   console.log(e.children[0].className == "ri-pencil-line");
-  let editBtn = document.querySelector(".deleteProduct");
+  let deleteBtn = document.querySelector(".all_products .deleteProduct");
   let updateProductForm = document.getElementById("updateProductForm")
   if (e.children[0].className == "ri-pencil-line") {
     e.children[0].classList.add("ri-close-fill");
     e.children[0].classList.remove("ri-pencil-line");
-    editBtn.style.display = "initial";
-    updateProductForm.style.display = "initial"
+    deleteBtn.style.display = "initial";
+    // updateProductForm.style.display = "initial"
   } else {
     e.children[0].classList.remove("ri-close-fill");
     e.children[0].classList.add("ri-pencil-line");
     editBtn.style.display = "none";
-    updateProductForm.style.display = "none"
+    // updateProductForm.style.display = "none"
 
   }
 };

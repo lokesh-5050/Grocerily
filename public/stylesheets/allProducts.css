@@ -127,8 +127,17 @@ body {
 .item > h4{
   margin-top: 0.5vw;
 }
-.fImg > img {
-  width: 14vw;
+.fImg{
+  width: inherit;
+  min-height: 10vw;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prdctImage{
+  width: 10vw;
+  
 }
 
 #edit {

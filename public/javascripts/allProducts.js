@@ -3,7 +3,6 @@ const handleDelete = (e) => {
   console.log(e.children[0].className == "ri-pencil-line");
 
   // let deleteBtn = document.querySelector(".all_products .deleteProduct");
-  let updateProductForm = document.querySelector(".item #updateProductForm");
   if (e.children[0].className == "ri-pencil-line") {
     e.children[0].classList.add("ri-close-fill");
     e.children[0].classList.remove("ri-pencil-line");
@@ -72,7 +71,7 @@ function formAndDeleteBtnOn() {
   document.querySelectorAll(".all_products").forEach((allProducts) => {
     // console.log(allProducts.children.length)
     console.log(allProducts.children);
-    
+
     console.log(allProducts.childNodes);
     allProducts.childNodes.forEach((e, i) => {
       if (i % 2 == 0) {
@@ -105,7 +104,7 @@ function formAndDeleteBtnOff() {
   document.querySelectorAll(".all_products").forEach((allProducts) => {
     // console.log(allProducts.children.length)
     console.log(allProducts.children);
-    
+
     console.log(allProducts.childNodes);
     allProducts.childNodes.forEach((e, i) => {
       if (i % 2 == 0) {
@@ -121,13 +120,11 @@ function formAndDeleteBtnOff() {
         });
 
         //form
-        let form = document.querySelectorAll(
-          `.${e.className} .showUpdateForm`
-        );
+        let form = document.querySelectorAll(`.${e.className} .showUpdateForm`);
         console.log(form);
         form.forEach((e) => {
           e.classList.remove("showUpdateForm");
-          e.classList.add("updateProductForm")
+          e.classList.add("updateProductForm");
         });
       }
     });

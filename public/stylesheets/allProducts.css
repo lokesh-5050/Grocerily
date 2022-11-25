@@ -156,6 +156,13 @@ body {
 .deleteProduct{
   display: none;
 }
+.showDeleteBtn{
+  display: initial;
+}
+.showUpdateForm{
+  display: initial;
+  position: absolute;
+}
 #updateBtn{
   width: 5vw;
   height: 2vw;
@@ -184,7 +191,7 @@ body {
 
 
 /* updateProductForm */
-#updateProductForm{
+.updateProductForm{
   position: absolute;
 }
 
@@ -250,6 +257,6 @@ body {
   margin-top: 9.3vw;
   margin-left: 1.5vw;
 }
-#updateProductForm{
+.updateProductForm{
   display: none ;
 }

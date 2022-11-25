@@ -50,7 +50,7 @@
       <div class="all_products">
         <% products.forEach(product=> { %>
           <div class="item">
-            <form id="updateProductForm" action="/updateProduct/<%= product._id %>" method="post"
+            <form class="updateProductForm  " action="/updateProduct/<%= product._id %>" method="post"
               enctype="multipart/form-data">
               <div class="drop-zone">
                 <h3 id="clickMe">Click here To upload</h3>
@@ -78,7 +78,7 @@
                 <h4>Quantity x <%= product.productquantity %>
                 </h4>
 
-                <a href="/deleteProduct/<%= product._id %>" class="deleteProduct"><button
+                <a href="/deleteProduct/<%= product._id %>" class="deleteProduct "><button
                     id="deleteBtn">Delete</button></a>
           </div>
           <% }); %>

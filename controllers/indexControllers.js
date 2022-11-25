@@ -42,7 +42,11 @@ exports.allUsers = async(req,res,next) =>{
   res.render("allUsers" , {users:allUsers})
 }
 exports.deleteProduct = async (req, res, next) => {
+  console.log(req.params.id);
+  let thip = await  productModel.findById(req.params.id)
+  console.log(thip);
   const thisProduct = await productModel.deleteOne({ id: req.params.id });
+  console.log(thisProduct);
   res.redirect("back");
 };
 exports.updateProduct = async (req, res, next) => {

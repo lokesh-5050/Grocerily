@@ -81,23 +81,25 @@ function formAndDeleteBtnOn() {
     allProducts.childNodes.forEach((e, i) => {
       if (i % 2 == 0) {
       } else {
-        console.log(e)
-        let btnDel = document.querySelectorAll(`.${e.className} .deleteProduct`)
+        console.log(e);
+        let btnDel = document.querySelectorAll(
+          `.${e.className} .deleteProduct`
+        );
         console.log(btnDel);
-        btnDel.forEach(e =>{
-          e.classList.add("showDeleteBtn")
-          // e.classList.remove("deleteProduct")
-        })
-        
+        btnDel.forEach((e) => {
+          e.classList.add("showDeleteBtn");
+          e.classList.remove("deleteProduct");
+        });
 
         //form
-        let form = document.querySelectorAll(`.${e.className} .updateProductForm`)
-        console.log(form)
-        form.forEach(e=>{
-          e.classList.add("showUpdateForm")
-          // e.classList.remove("updateProductForm")
-        })
-
+        let form = document.querySelectorAll(
+          `.${e.className} .updateProductForm`
+        );
+        console.log(form);
+        form.forEach((e) => {
+          e.classList.add("showUpdateForm");
+          e.classList.remove("updateProductForm");
+        });
       }
     });
   });
@@ -116,23 +118,25 @@ function formAndDeleteBtnOff() {
     allProducts.childNodes.forEach((e, i) => {
       if (i % 2 == 0) {
       } else {
-        console.log(e)
-        let btnDel = document.querySelectorAll(`.${e.className} .deleteProduct`)
+        console.log(e);
+        let btnDel = document.querySelectorAll(
+          `.${e.className} .showDeleteBtn`
+        );
         console.log(btnDel);
-        btnDel.forEach(e =>{
-          e.classList.remove("showDeleteBtn")
-          // e.classList.add("deleteProduct")
-        })
-        
+        btnDel.forEach((e) => {
+          e.classList.remove("showDeleteBtn");
+          e.classList.add("deleteProduct");
+        });
 
         //form
-        let form = document.querySelectorAll(`.${e.className} .updateProductForm`)
-        console.log(form)
-        form.forEach(e=>{
-          e.classList.remove("showUpdateForm")
-          // e.classList.add("updateProductForm")
-        })
-
+        let form = document.querySelectorAll(
+          `.${e.className} .showUpdateForm`
+        );
+        console.log(form);
+        form.forEach((e) => {
+          e.classList.remove("showUpdateForm");
+          e.classList.add("updateProductForm")
+        });
       }
     });
   });

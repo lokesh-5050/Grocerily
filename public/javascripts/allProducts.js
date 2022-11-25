@@ -72,11 +72,7 @@ function formAndDeleteBtnOn() {
   document.querySelectorAll(".all_products").forEach((allProducts) => {
     // console.log(allProducts.children.length)
     console.log(allProducts.children);
-    // allProducts.children.
-    // for (let i = 0; i < allProducts.children.length; i++) {
-    //   allProducts.children[i].children[i].style.display = "initial";
-    //   allProducts.children[i].children[5].style.display = "initial";
-    // }
+    
     console.log(allProducts.childNodes);
     allProducts.childNodes.forEach((e, i) => {
       if (i % 2 == 0) {
@@ -109,11 +105,7 @@ function formAndDeleteBtnOff() {
   document.querySelectorAll(".all_products").forEach((allProducts) => {
     // console.log(allProducts.children.length)
     console.log(allProducts.children);
-    // allProducts.children.
-    // for (let i = 0; i < allProducts.children.length; i++) {
-    //   allProducts.children[i].children[i].style.display = "initial";
-    //   allProducts.children[i].children[5].style.display = "initial";
-    // }
+    
     console.log(allProducts.childNodes);
     allProducts.childNodes.forEach((e, i) => {
       if (i % 2 == 0) {

@@ -35,7 +35,7 @@ exports.addProductPage = async (req, res, next) => {
 };
 exports.allProducts = async (req, res, next) => {
   const allProducts = await productModel.find();
-  res.render("allProducts", { products: allProducts });
+  res.render("allProducts", { products: allProducts , noOfPrdct:allProducts.length});
 };
 exports.allUsers = async(req,res,next) =>{
   let allUsers = await userModel.find();

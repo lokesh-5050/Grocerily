@@ -260,3 +260,8 @@ body {
 .updateProductForm{
   display: none ;
 }
+
+.noOfPrdct{
+  position: absolute;
+  padding: 2vw 2vw;
+}

@@ -1,22 +1,51 @@
 const handleDelete = (e) => {
-  console.log(e);
-  console.log(e.children[0].className == "ri-pencil-line");
+  let updateProductForm = document.querySelector(".updateProductForm");
 
-  // let deleteBtn = document.querySelector(".all_products .deleteProduct");
   if (e.children[0].className == "ri-pencil-line") {
     e.children[0].classList.add("ri-close-fill");
     e.children[0].classList.remove("ri-pencil-line");
-    formAndDeleteBtnOn();
-    // deleteBtn.style.display = "initial";
-    // updateProductForm.style.display = "initial"
-  } else {
-    e.children[0].classList.remove("ri-close-fill");
-    e.children[0].classList.add("ri-pencil-line");
-    formAndDeleteBtnOff();
-    // deleteBtn.style.display = "none";
-    // updateProductForm.style.display = "none"
+    e.children[0].style.zIndex = "9887";
+    updateProductForm.style.display = "none";
+    e.children[0].parentElement.parentElement.children[1].style.display =
+      "initial";
+      e.children[0].parentElement.parentElement.children[6].style.display = "initial";
+      
+      // let openFileOpt = e.children[0].parentElement.parentElement.children[1].children[0].children[0]
+      // console.log(openFileOpt);
+        
+    } else {
+      e.children[0].classList.remove("ri-close-fill");
+      e.children[0].classList.add("ri-pencil-line");
+      updateProductForm.style.display = "none";
+      e.children[0].parentElement.parentElement.children[1].style.display =
+        "none";
+        e.children[0].parentElement.parentElement.children[6].style.display = "none"
+        
+        e.children[0].parentElement.parentElement.children[1].children[0].children[2].style.display = "none" // img
   }
+
+
+  // console.log(e.children[0].parentElement.parentElement.children[1].children[0].children[0].className == "openFileOpt")
+  
+  
+
+  console.log(e.children[0].parentElement.parentElement.children[1].children[0].children[2]);
 };
+
+const openFileOpt = (e, id)=>{
+  console.log(e);
+  console.log(e.parentElement);
+  e.parentElement.children[1].click()
+  e.parentElement.children[1].addEventListener("change", (insideE)=>{
+    console.log(insideE.target.files[0]);
+    let imgLink = URL.createObjectURL(insideE.target.files[0])
+    e.parentElement.children[2].src = imgLink
+    e.parentElement.children[2].style.display = "initial"
+  })
+
+
+}
+
 
 const it = document.getElementById("clickMe");
 const input = document.getElementById("input");

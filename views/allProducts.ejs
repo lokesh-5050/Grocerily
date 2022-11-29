@@ -44,16 +44,17 @@
       </div>
     </div>
     <div id="right">
-      <div onclick="handleDelete(this)" id="edit">
-        <i id="edit_icon" class="ri-pencil-line"></i>
-      </div>
+      
       <div class="all_products">
         <% products.forEach(product=> { %>
           <div class="item">
-            <form class="updateProductForm  " action="/updateProduct/<%= product._id %>" method="post"
+            <div onclick="handleDelete(this)" id="edit">
+              <i id="edit_icon" class="ri-pencil-line"></i>
+            </div>
+            <form class="updateProductForm" action="/updateProduct/<%= product._id %>" method="post"
               enctype="multipart/form-data">
               <div class="drop-zone">
-                <h3 id="clickMe">Click here To upload</h3>
+                <h3 id="clickMe" class="openFileOpt" onclick="openFileOpt(this , `<%= product._id%>`)">Click here To upload</h3>
                 <input id="input" type="file" name="myFile" accept="image/*" class="drop-zone__input" />
                 <img id="frame" src="" style="
                     max-height: 13vw;

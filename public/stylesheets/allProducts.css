@@ -143,8 +143,8 @@ body {
 #edit {
   position: absolute;
   right: 2%;
-  top: 1.5%;
-  width: 6vw;
+  top: 1%;
+  width: 3vw;
   height: 3vw;
   display: flex;
   justify-content: center;

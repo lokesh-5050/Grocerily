@@ -43,10 +43,8 @@ exports.allUsers = async(req,res,next) =>{
 }
 exports.deleteProduct = async (req, res, next) => {
   console.log(req.params.id);
-  let thip = await  productModel.findById(req.params.id)
-  console.log(thip);
-  const thisProduct = await productModel.deleteOne({ id: req.params.id });
-  console.log(thisProduct);
+  let prdctDeleted = await productModel.findByIdAndRemove(req.params.id)
+  console.log(prdctDeleted);
   res.redirect("back");
 };
 exports.updateProduct = async (req, res, next) => {

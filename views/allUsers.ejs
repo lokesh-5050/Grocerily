@@ -46,6 +46,9 @@
             <marquee behavior="scroll" direction="left">
                 <img style="max-height: 40px;" src="../images/apple-touch-icon.png" alt="">
             </marquee>
+
+            <h4>Total Users - <%= users.length %> </h4>
+            
             <% users.forEach(user => {%>
                 <h1><%= user.username %> </h1>  
                 <h4><%= user.email %> </h4>
